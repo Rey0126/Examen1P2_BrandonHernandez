@@ -1,12 +1,13 @@
 package examen1p2_brandonhernandez;
 
-public class LibroReferencia extends Libro{
+public class LibroFiccion extends Libro {
+
     private String tipo;
 
-    public LibroReferencia() {
+    public LibroFiccion() {
     }
 
-    public LibroReferencia(String tipo, String title, String autor, double precio) {
+    public LibroFiccion( String tipo,String title, String autor, double precio) {
         super(title, autor, precio);
         this.tipo = tipo;
     }
@@ -21,8 +22,7 @@ public class LibroReferencia extends Libro{
 
     @Override
     public String toString() {
-        return super.toString()+ "\nTipo: " + tipo;
+        return super.toString() + "\nTipo: " + tipo;
     }
-    
-    
+
 }

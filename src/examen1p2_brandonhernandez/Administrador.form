@@ -202,7 +202,7 @@
                                       <EmptySpace min="-2" pref="245" max="-2" attributes="0"/>
                                       <Component id="jLabel9" min="-2" pref="38" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jComboBox1" min="-2" pref="198" max="-2" attributes="0"/>
+                                      <Component id="cbReferencia" min="-2" pref="198" max="-2" attributes="0"/>
                                       <EmptySpace pref="331" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
@@ -218,7 +218,7 @@
                                       <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="jLabel9" max="32767" attributes="0"/>
-                                          <Component id="jComboBox1" pref="30" max="32767" attributes="0"/>
+                                          <Component id="cbReferencia" pref="30" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace pref="119" max="32767" attributes="0"/>
                                       <Component id="btnPublicar1" min="-2" max="-2" attributes="0"/>
@@ -233,14 +233,14 @@
                                 <Property name="text" type="java.lang.String" value="Tipo: "/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JComboBox" name="jComboBox1">
+                            <Component class="javax.swing.JComboBox" name="cbReferencia">
                               <Properties>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                                   <StringArray count="4">
-                                    <StringItem index="0" value="Libro 1"/>
-                                    <StringItem index="1" value="Libro 2"/>
-                                    <StringItem index="2" value="Item 3"/>
-                                    <StringItem index="3" value="Item 4"/>
+                                    <StringItem index="0" value="Diccionario"/>
+                                    <StringItem index="1" value="Enciclopedia"/>
+                                    <StringItem index="2" value="Manual Tecnico"/>
+                                    <StringItem index="3" value="Tesauro"/>
                                   </StringArray>
                                 </Property>
                               </Properties>
@@ -252,6 +252,9 @@
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Publicar Libro"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnPublicar1MouseClicked"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -271,7 +274,7 @@
                                       <EmptySpace min="-2" pref="245" max="-2" attributes="0"/>
                                       <Component id="jLabel10" min="-2" pref="38" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jComboBox2" min="-2" pref="198" max="-2" attributes="0"/>
+                                      <Component id="cbFiccion" min="-2" pref="198" max="-2" attributes="0"/>
                                       <EmptySpace pref="331" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
@@ -287,7 +290,7 @@
                                       <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="jLabel10" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jComboBox2" alignment="0" pref="30" max="32767" attributes="0"/>
+                                          <Component id="cbFiccion" alignment="0" pref="30" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace pref="119" max="32767" attributes="0"/>
                                       <Component id="btnPublicar2" min="-2" max="-2" attributes="0"/>
@@ -302,14 +305,14 @@
                                 <Property name="text" type="java.lang.String" value="Tipo: "/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JComboBox" name="jComboBox2">
+                            <Component class="javax.swing.JComboBox" name="cbFiccion">
                               <Properties>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                                   <StringArray count="4">
-                                    <StringItem index="0" value="Libro 1"/>
-                                    <StringItem index="1" value="Libro 2"/>
-                                    <StringItem index="2" value="Item 3"/>
-                                    <StringItem index="3" value="Item 4"/>
+                                    <StringItem index="0" value="Novela"/>
+                                    <StringItem index="1" value="SciFi"/>
+                                    <StringItem index="2" value="Misterio"/>
+                                    <StringItem index="3" value="Aventura"/>
                                   </StringArray>
                                 </Property>
                               </Properties>
@@ -321,6 +324,9 @@
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Publicar Libro"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnPublicar2MouseClicked"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -340,7 +346,7 @@
                                       <EmptySpace min="-2" pref="245" max="-2" attributes="0"/>
                                       <Component id="jLabel11" min="-2" pref="38" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jComboBox3" min="-2" pref="198" max="-2" attributes="0"/>
+                                      <Component id="cbNoFiccion" min="-2" pref="198" max="-2" attributes="0"/>
                                       <EmptySpace pref="331" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
@@ -356,7 +362,7 @@
                                       <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="jLabel11" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jComboBox3" alignment="0" pref="30" max="32767" attributes="0"/>
+                                          <Component id="cbNoFiccion" alignment="0" pref="30" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace pref="119" max="32767" attributes="0"/>
                                       <Component id="btnPublicar3" min="-2" max="-2" attributes="0"/>
@@ -371,14 +377,14 @@
                                 <Property name="text" type="java.lang.String" value="Tipo: "/>
                               </Properties>
                             </Component>
-                            <Component class="javax.swing.JComboBox" name="jComboBox3">
+                            <Component class="javax.swing.JComboBox" name="cbNoFiccion">
                               <Properties>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                                   <StringArray count="4">
-                                    <StringItem index="0" value="Libro 1"/>
-                                    <StringItem index="1" value="Libro 2"/>
-                                    <StringItem index="2" value="Item 3"/>
-                                    <StringItem index="3" value="Item 4"/>
+                                    <StringItem index="0" value="Ensayo"/>
+                                    <StringItem index="1" value="Biografia"/>
+                                    <StringItem index="2" value="Autobiografia"/>
+                                    <StringItem index="3" value="Revista Cientifica"/>
                                   </StringArray>
                                 </Property>
                               </Properties>
@@ -390,6 +396,9 @@
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Publicar Libro"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnPublicar3MouseClicked"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -434,7 +443,7 @@
                               <EmptySpace min="-2" pref="283" max="-2" attributes="0"/>
                               <Component id="jLabel12" min="-2" pref="38" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jComboBox4" min="-2" pref="198" max="-2" attributes="0"/>
+                              <Component id="cbListar" min="-2" pref="198" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
@@ -450,7 +459,7 @@
                               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jLabel12" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jComboBox4" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="cbListar" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jScrollPane1" min="-2" pref="410" max="-2" attributes="0"/>
@@ -465,7 +474,7 @@
                         <Property name="text" type="java.lang.String" value="Tipo: "/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JComboBox" name="jComboBox4">
+                    <Component class="javax.swing.JComboBox" name="cbListar">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="4">

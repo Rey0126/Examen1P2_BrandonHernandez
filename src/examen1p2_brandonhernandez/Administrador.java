@@ -42,15 +42,15 @@ public class Administrador extends javax.swing.JFrame {
         btnPublicar = new javax.swing.JButton();
         LibroReferencia = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cbReferencia = new javax.swing.JComboBox<>();
         btnPublicar1 = new javax.swing.JButton();
         LibroFiccion = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        cbFiccion = new javax.swing.JComboBox<>();
         btnPublicar2 = new javax.swing.JButton();
         LibroNoFiccion = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        cbNoFiccion = new javax.swing.JComboBox<>();
         btnPublicar3 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -60,7 +60,7 @@ public class Administrador extends javax.swing.JFrame {
         precio = new javax.swing.JFormattedTextField();
         listar = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        cbListar = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
         editar = new javax.swing.JPanel();
@@ -181,9 +181,14 @@ public class Administrador extends javax.swing.JFrame {
 
         jLabel9.setText("Tipo: ");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Libro 1", "Libro 2", "Item 3", "Item 4" }));
+        cbReferencia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Diccionario", "Enciclopedia", "Manual Tecnico", "Tesauro" }));
 
         btnPublicar1.setText("Publicar Libro");
+        btnPublicar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnPublicar1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout LibroReferenciaLayout = new javax.swing.GroupLayout(LibroReferencia);
         LibroReferencia.setLayout(LibroReferenciaLayout);
@@ -193,7 +198,7 @@ public class Administrador extends javax.swing.JFrame {
                 .addGap(245, 245, 245)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cbReferencia, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(331, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LibroReferenciaLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -206,7 +211,7 @@ public class Administrador extends javax.swing.JFrame {
                 .addGap(57, 57, 57)
                 .addGroup(LibroReferenciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
+                    .addComponent(cbReferencia, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
                 .addComponent(btnPublicar1)
                 .addGap(36, 36, 36))
@@ -216,9 +221,14 @@ public class Administrador extends javax.swing.JFrame {
 
         jLabel10.setText("Tipo: ");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Libro 1", "Libro 2", "Item 3", "Item 4" }));
+        cbFiccion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Novela", "SciFi", "Misterio", "Aventura" }));
 
         btnPublicar2.setText("Publicar Libro");
+        btnPublicar2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnPublicar2MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout LibroFiccionLayout = new javax.swing.GroupLayout(LibroFiccion);
         LibroFiccion.setLayout(LibroFiccionLayout);
@@ -228,7 +238,7 @@ public class Administrador extends javax.swing.JFrame {
                 .addGap(245, 245, 245)
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cbFiccion, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(331, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LibroFiccionLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -241,7 +251,7 @@ public class Administrador extends javax.swing.JFrame {
                 .addGap(57, 57, 57)
                 .addGroup(LibroFiccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
+                    .addComponent(cbFiccion, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
                 .addComponent(btnPublicar2)
                 .addGap(36, 36, 36))
@@ -251,9 +261,14 @@ public class Administrador extends javax.swing.JFrame {
 
         jLabel11.setText("Tipo: ");
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Libro 1", "Libro 2", "Item 3", "Item 4" }));
+        cbNoFiccion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ensayo", "Biografia", "Autobiografia", "Revista Cientifica" }));
 
         btnPublicar3.setText("Publicar Libro");
+        btnPublicar3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnPublicar3MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout LibroNoFiccionLayout = new javax.swing.GroupLayout(LibroNoFiccion);
         LibroNoFiccion.setLayout(LibroNoFiccionLayout);
@@ -263,7 +278,7 @@ public class Administrador extends javax.swing.JFrame {
                 .addGap(245, 245, 245)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cbNoFiccion, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(331, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LibroNoFiccionLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -276,7 +291,7 @@ public class Administrador extends javax.swing.JFrame {
                 .addGap(57, 57, 57)
                 .addGroup(LibroNoFiccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
+                    .addComponent(cbNoFiccion, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
                 .addComponent(btnPublicar3)
                 .addGap(36, 36, 36))
@@ -339,7 +354,7 @@ public class Administrador extends javax.swing.JFrame {
 
         jLabel12.setText("Tipo: ");
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Libro 1", "Libro 2", "Item 3", "Item 4" }));
+        cbListar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Libro 1", "Libro 2", "Item 3", "Item 4" }));
 
         jScrollPane1.setViewportView(jTextPane1);
 
@@ -351,7 +366,7 @@ public class Administrador extends javax.swing.JFrame {
                 .addGap(283, 283, 283)
                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cbListar, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, listarLayout.createSequentialGroup()
                 .addContainerGap(46, Short.MAX_VALUE)
@@ -364,7 +379,7 @@ public class Administrador extends javax.swing.JFrame {
                 .addGap(43, 43, 43)
                 .addGroup(listarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbListar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(58, Short.MAX_VALUE))
@@ -855,7 +870,7 @@ public class Administrador extends javax.swing.JFrame {
             vAdmin.pack();
             vAdmin.setVisible(true);
             vAdmin.setLocationRelativeTo(null);
-        } else{
+        } else {
             JOptionPane.showMessageDialog(this, "Credenciales Incorrectas");
             user.setText("");
             pass.setText("");
@@ -885,8 +900,23 @@ public class Administrador extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6MouseClicked
 
     private void btnPublicarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPublicarMouseClicked
-        Libro L = new LibroTexto(titulo.getText(),autor.getText(),Double.parseDouble(precio.getText()),curso.getText(),facu.getText());
+        Libro L = new LibroTexto(titulo.getText(), autor.getText(), Double.parseDouble(precio.getText()), curso.getText(), facu.getText());
+        cbListar.addItem(L.toString());
     }//GEN-LAST:event_btnPublicarMouseClicked
+
+    private void btnPublicar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPublicar1MouseClicked
+        Libro L = new LibroReferencia(cbReferencia.getSelectedItem().toString(), titulo.getText(), autor.getText(), Double.parseDouble(precio.getText()));
+        cbListar.addItem(L.toString());
+    }//GEN-LAST:event_btnPublicar1MouseClicked
+
+    private void btnPublicar2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPublicar2MouseClicked
+        Libro L = new LibroFiccion(cbFiccion.getSelectedItem().toString(), titulo.getText(), autor.getText(), Double.parseDouble(precio.getText()));
+        cbListar.addItem(L.toString());
+    }//GEN-LAST:event_btnPublicar2MouseClicked
+
+    private void btnPublicar3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPublicar3MouseClicked
+        Libro L = new LibroNoFiccion(cbFiccion.getSelectedItem().toString(), titulo.getText(), autor.getText(), Double.parseDouble(precio.getText()));
+    }//GEN-LAST:event_btnPublicar3MouseClicked
 
     /**
      * @param args the command line arguments
@@ -937,6 +967,10 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JButton btnPublicar2;
     private javax.swing.JButton btnPublicar3;
     private javax.swing.JButton btnUser;
+    private javax.swing.JComboBox<String> cbFiccion;
+    private javax.swing.JComboBox<String> cbListar;
+    private javax.swing.JComboBox<String> cbNoFiccion;
+    private javax.swing.JComboBox<String> cbReferencia;
     private javax.swing.JPanel cerrarSesion;
     private javax.swing.JPanel comprar;
     private javax.swing.JTextField curso;
@@ -953,13 +987,9 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox10;
     private javax.swing.JComboBox<String> jComboBox11;
     private javax.swing.JComboBox<String> jComboBox12;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JComboBox<String> jComboBox6;
     private javax.swing.JComboBox<String> jComboBox7;
