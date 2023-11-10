@@ -1,13 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package examen1p2_brandonhernandez;
 
-/**
- *
- * @author brhb2
- */
-public class LibroReferencia {
+public class LibroReferencia extends Libro{
+    private String tipo;
+
+    public LibroReferencia() {
+    }
+
+    public LibroReferencia(String tipo, String title, String autor, double precio, int edicion) {
+        super(title, autor, precio, edicion);
+        this.tipo = tipo;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()+ "\nTipo: " + tipo;
+    }
+    
     
 }
