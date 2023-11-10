@@ -10,11 +10,11 @@ public class Libro {
     public Libro() {
     }
 
-    public Libro(String title, String autor, double precio, int edicion) {
+    public Libro(String title, String autor, double precio) {
         this.title = title;
         this.autor = autor;
         this.precio = precio;
-        this.edicion = edicion;
+
     }
 
     public int getEdicion() {

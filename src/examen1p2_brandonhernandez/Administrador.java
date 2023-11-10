@@ -12,12 +12,12 @@ import javax.swing.JOptionPane;
  */
 public class Administrador extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Libros
-     */
+    int monedas;
+
     public Administrador() {
         initComponents();
         this.setLocationRelativeTo(null);
+        monedas = 9999;
     }
 
     /**
@@ -37,8 +37,8 @@ public class Administrador extends javax.swing.JFrame {
         LibroTexto = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
+        facu = new javax.swing.JTextField();
+        curso = new javax.swing.JTextField();
         btnPublicar = new javax.swing.JButton();
         LibroReferencia = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
@@ -55,9 +55,9 @@ public class Administrador extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        titulo = new javax.swing.JTextField();
+        autor = new javax.swing.JTextField();
+        precio = new javax.swing.JFormattedTextField();
         listar = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jComboBox4 = new javax.swing.JComboBox<>();
@@ -85,7 +85,7 @@ public class Administrador extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextPane3 = new javax.swing.JTextPane();
         jButton4 = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        cerrarSesion = new javax.swing.JPanel();
         jButton5 = new javax.swing.JButton();
         vUser = new javax.swing.JDialog();
         jPanel2 = new javax.swing.JPanel();
@@ -103,6 +103,19 @@ public class Administrador extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         devolver = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTextPane6 = new javax.swing.JTextPane();
+        jLabel24 = new javax.swing.JLabel();
+        jComboBox11 = new javax.swing.JComboBox<>();
+        jLabel25 = new javax.swing.JLabel();
+        jComboBox12 = new javax.swing.JComboBox<>();
+        jLabel26 = new javax.swing.JLabel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jTextPane7 = new javax.swing.JTextPane();
+        jLabel27 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        salir = new javax.swing.JPanel();
+        jButton6 = new javax.swing.JButton();
         vLogin = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -119,6 +132,11 @@ public class Administrador extends javax.swing.JFrame {
         jLabel8.setText("Facultad:");
 
         btnPublicar.setText("Publicar Libro");
+        btnPublicar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnPublicarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout LibroTextoLayout = new javax.swing.GroupLayout(LibroTexto);
         LibroTexto.setLayout(LibroTextoLayout);
@@ -130,11 +148,11 @@ public class Administrador extends javax.swing.JFrame {
                     .addGroup(LibroTextoLayout.createSequentialGroup()
                         .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(28, 28, 28)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(curso, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(LibroTextoLayout.createSequentialGroup()
                         .addComponent(jLabel8)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(facu, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(302, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LibroTextoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -146,11 +164,11 @@ public class Administrador extends javax.swing.JFrame {
             .addGroup(LibroTextoLayout.createSequentialGroup()
                 .addGap(55, 55, 55)
                 .addGroup(LibroTextoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(curso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addGroup(LibroTextoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(facu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(LibroTextoLayout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -283,15 +301,15 @@ public class Administrador extends javax.swing.JFrame {
                     .addGroup(publicarLayout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(publicarLayout.createSequentialGroup()
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jFormattedTextField1))
+                        .addComponent(precio))
                     .addGroup(publicarLayout.createSequentialGroup()
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(autor, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         publicarLayout.setVerticalGroup(
@@ -299,20 +317,20 @@ public class Administrador extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, publicarLayout.createSequentialGroup()
                 .addGap(65, 65, 65)
                 .addGroup(publicarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(publicarLayout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(publicarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(autor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(publicarLayout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
                 .addGroup(publicarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(precio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
                 .addComponent(interfaz2, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -503,6 +521,7 @@ public class Administrador extends javax.swing.JFrame {
 
         interfaz1.addTab("Eliminar Libro", eliminar);
 
+        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jButton5.setText("CERRAR SESION");
         jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -510,24 +529,24 @@ public class Administrador extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(230, 230, 230)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(236, Short.MAX_VALUE))
+        javax.swing.GroupLayout cerrarSesionLayout = new javax.swing.GroupLayout(cerrarSesion);
+        cerrarSesion.setLayout(cerrarSesionLayout);
+        cerrarSesionLayout.setHorizontalGroup(
+            cerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cerrarSesionLayout.createSequentialGroup()
+                .addGap(199, 199, 199)
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(209, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(146, 146, 146)
+        cerrarSesionLayout.setVerticalGroup(
+            cerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cerrarSesionLayout.createSequentialGroup()
+                .addGap(144, 144, 144)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(185, Short.MAX_VALUE))
+                .addContainerGap(187, Short.MAX_VALUE))
         );
 
-        interfaz1.addTab("Cerrar Sesión", jPanel1);
+        interfaz1.addTab("Cerrar Sesión", cerrarSesion);
 
         background.add(interfaz1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 590));
 
@@ -541,6 +560,8 @@ public class Administrador extends javax.swing.JFrame {
             vAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jScrollPane4.setViewportView(jTextPane4);
 
@@ -623,29 +644,115 @@ public class Administrador extends javax.swing.JFrame {
 
         interfazUser.addTab("Comprar Libro", comprar);
 
+        jScrollPane6.setViewportView(jTextPane6);
+
+        jLabel24.setText("Tipo: ");
+
+        jComboBox11.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Libro 1", "Libro 2", "Item 3", "Item 4" }));
+
+        jLabel25.setText("Libro");
+
+        jComboBox12.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Libro 1", "Libro 2", "Item 3", "Item 4" }));
+
+        jLabel26.setText("Transacción:");
+
+        jScrollPane7.setViewportView(jTextPane7);
+
+        jLabel27.setText("Saldo del Usuario: ");
+
+        jButton2.setText("Devolver Libro");
+
         javax.swing.GroupLayout devolverLayout = new javax.swing.GroupLayout(devolver);
         devolver.setLayout(devolverLayout);
         devolverLayout.setHorizontalGroup(
             devolverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 744, Short.MAX_VALUE)
+            .addGroup(devolverLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addGroup(devolverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(devolverLayout.createSequentialGroup()
+                        .addGroup(devolverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(devolverLayout.createSequentialGroup()
+                                .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton2))
+                            .addGroup(devolverLayout.createSequentialGroup()
+                                .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(22, 22, 22))
+                    .addGroup(devolverLayout.createSequentialGroup()
+                        .addGroup(devolverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane7)
+                            .addGroup(devolverLayout.createSequentialGroup()
+                                .addGap(82, 82, 82)
+                                .addGroup(devolverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(devolverLayout.createSequentialGroup()
+                                        .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jComboBox12, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(devolverLayout.createSequentialGroup()
+                                        .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jComboBox11, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 65, Short.MAX_VALUE)))
+                        .addGap(36, 36, 36))))
         );
         devolverLayout.setVerticalGroup(
             devolverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 511, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, devolverLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(devolverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane6)
+                    .addGroup(devolverLayout.createSequentialGroup()
+                        .addGroup(devolverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox11, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(devolverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox12, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(29, 29, 29)
+                        .addComponent(jLabel26)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(82, 82, 82)
+                        .addGroup(devolverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton2)
+                            .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(27, 27, 27))
         );
 
         interfazUser.addTab("Devolver Libro", devolver);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(interfazUser)
+        jButton6.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jButton6.setText("Salir");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout salirLayout = new javax.swing.GroupLayout(salir);
+        salir.setLayout(salirLayout);
+        salirLayout.setHorizontalGroup(
+            salirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(salirLayout.createSequentialGroup()
+                .addGap(110, 110, 110)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 504, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(130, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(interfazUser)
+        salirLayout.setVerticalGroup(
+            salirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(salirLayout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(134, Short.MAX_VALUE))
         );
+
+        interfazUser.addTab("Salir", salir);
+
+        jPanel2.add(interfazUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout vUserLayout = new javax.swing.GroupLayout(vUser.getContentPane());
         vUser.getContentPane().setLayout(vUserLayout);
@@ -667,8 +774,6 @@ public class Administrador extends javax.swing.JFrame {
         jLabel2.setText("User Administrador:");
 
         jLabel3.setText("Password:");
-
-        pass.setText("jPasswor");
 
         btnAdmin.setText("Log In Administrador ");
         btnAdmin.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -744,10 +849,18 @@ public class Administrador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdminMouseClicked
-        this.setVisible(false);
-        vAdmin.pack();
-        vAdmin.setVisible(true);
-        vAdmin.setLocationRelativeTo(null);
+
+        if (user.getText().equals("lib123") && pass.getText().equals("123lib")) {
+            this.setVisible(false);
+            vAdmin.pack();
+            vAdmin.setVisible(true);
+            vAdmin.setLocationRelativeTo(null);
+        } else{
+            JOptionPane.showMessageDialog(this, "Credenciales Incorrectas");
+            user.setText("");
+            pass.setText("");
+        }
+
     }//GEN-LAST:event_btnAdminMouseClicked
 
     private void btnUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUserMouseClicked
@@ -763,6 +876,17 @@ public class Administrador extends javax.swing.JFrame {
         vAdmin.setVisible(false);
         JOptionPane.showMessageDialog(this, "¡Sesión Cerrada!");
     }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+        this.setVisible(true);
+        vUser.pack();
+        vUser.setVisible(false);
+        JOptionPane.showMessageDialog(this, "¡Saliendo del Programa!");
+    }//GEN-LAST:event_jButton6MouseClicked
+
+    private void btnPublicarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPublicarMouseClicked
+        Libro L = new LibroTexto(titulo.getText(),autor.getText(),Double.parseDouble(precio.getText()),curso.getText(),facu.getText());
+    }//GEN-LAST:event_btnPublicarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -805,6 +929,7 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JPanel LibroNoFiccion;
     private javax.swing.JPanel LibroReferencia;
     private javax.swing.JPanel LibroTexto;
+    private javax.swing.JTextField autor;
     private javax.swing.JPanel background;
     private javax.swing.JButton btnAdmin;
     private javax.swing.JButton btnPublicar;
@@ -812,19 +937,26 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JButton btnPublicar2;
     private javax.swing.JButton btnPublicar3;
     private javax.swing.JButton btnUser;
+    private javax.swing.JPanel cerrarSesion;
     private javax.swing.JPanel comprar;
+    private javax.swing.JTextField curso;
     private javax.swing.JPanel devolver;
     private javax.swing.JPanel editar;
     private javax.swing.JPanel eliminar;
+    private javax.swing.JTextField facu;
     private javax.swing.JTabbedPane interfaz1;
     private javax.swing.JTabbedPane interfaz2;
     private javax.swing.JTabbedPane interfazUser;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox10;
+    private javax.swing.JComboBox<String> jComboBox11;
+    private javax.swing.JComboBox<String> jComboBox12;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox4;
@@ -833,7 +965,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox7;
     private javax.swing.JComboBox<String> jComboBox8;
     private javax.swing.JComboBox<String> jComboBox9;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JFormattedTextField jFormattedTextField2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -851,6 +982,10 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -858,17 +993,14 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextPane jTextPane1;
@@ -876,9 +1008,14 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JTextPane jTextPane3;
     private javax.swing.JTextPane jTextPane4;
     private javax.swing.JTextPane jTextPane5;
+    private javax.swing.JTextPane jTextPane6;
+    private javax.swing.JTextPane jTextPane7;
     private javax.swing.JPanel listar;
     private javax.swing.JPasswordField pass;
+    private javax.swing.JFormattedTextField precio;
     private javax.swing.JPanel publicar;
+    private javax.swing.JPanel salir;
+    private javax.swing.JTextField titulo;
     private javax.swing.JTextField user;
     private javax.swing.JDialog vAdmin;
     private javax.swing.JPanel vLogin;

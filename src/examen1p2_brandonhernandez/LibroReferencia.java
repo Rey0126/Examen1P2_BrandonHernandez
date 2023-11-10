@@ -7,7 +7,7 @@ public class LibroReferencia extends Libro{
     }
 
     public LibroReferencia(String tipo, String title, String autor, double precio, int edicion) {
-        super(title, autor, precio, edicion);
+        super(title, autor, precio);
         this.tipo = tipo;
     }
 

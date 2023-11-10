@@ -5,10 +5,11 @@ public class LibroTexto extends Libro{
     private String facu;
 
     public LibroTexto() {
+        super();
     }
 
     public LibroTexto(String curso, String facu, String title, String autor, double precio, int edicion) {
-        super(title, autor, precio, edicion);
+        super(title, autor, precio);
         this.curso = curso;
         this.facu = facu;
     }
