@@ -54,8 +54,8 @@
                                       <Component id="titulo" min="-2" pref="225" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <Component id="jLabel6" min="-2" pref="37" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="jLabel6" min="-2" pref="43" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="precio" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
@@ -525,12 +525,12 @@
                                   <Group type="102" attributes="0">
                                       <Component id="jLabel14" min="-2" pref="38" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jComboBox6" max="32767" attributes="0"/>
+                                      <Component id="cbLibros" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <Component id="jLabel13" min="-2" pref="38" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jComboBox5" max="32767" attributes="0"/>
+                                      <Component id="cbTipos" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -540,24 +540,24 @@
                                           <Group type="102" attributes="0">
                                               <Component id="jLabel17" min="-2" pref="51" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="jFormattedTextField2" pref="219" max="32767" attributes="0"/>
+                                              <Component id="modPrecio" pref="219" max="32767" attributes="0"/>
                                           </Group>
                                           <Group type="102" attributes="0">
                                               <Component id="jLabel15" min="-2" pref="51" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="jTextField7" max="32767" attributes="0"/>
+                                              <Component id="modTitle" max="32767" attributes="0"/>
                                           </Group>
                                           <Group type="102" attributes="0">
                                               <Component id="jLabel16" min="-2" pref="51" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="jTextField8" max="32767" attributes="0"/>
+                                              <Component id="modAutor" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace min="117" pref="123" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnEditar" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -570,32 +570,32 @@
                               <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jLabel13" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jComboBox5" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="cbTipos" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jLabel14" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jComboBox6" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="cbLibros" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="jLabel15" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                                          <Component id="jTextField7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="modTitle" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="jLabel16" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                                          <Component id="jTextField8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="modAutor" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="jLabel17" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                                          <Component id="jFormattedTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="modPrecio" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="222" max="-2" attributes="0"/>
-                                      <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnEditar" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jScrollPane2" min="-2" pref="377" max="-2" attributes="0"/>
                               </Group>
@@ -610,7 +610,7 @@
                         <Property name="text" type="java.lang.String" value="Tipo: "/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JComboBox" name="jComboBox5">
+                    <Component class="javax.swing.JComboBox" name="cbTipos">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="4">
@@ -621,6 +621,9 @@
                           </StringArray>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="cbTiposItemStateChanged"/>
+                      </Events>
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                       </AuxValues>
@@ -630,7 +633,7 @@
                         <Property name="text" type="java.lang.String" value="Libro"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JComboBox" name="jComboBox6">
+                    <Component class="javax.swing.JComboBox" name="cbLibros">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="0"/>
@@ -647,7 +650,7 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JTextPane" name="jTextPane2">
+                        <Component class="javax.swing.JTextPane" name="printEditLibro">
                         </Component>
                       </SubComponents>
                     </Container>
@@ -656,31 +659,34 @@
                         <Property name="text" type="java.lang.String" value="Titulo:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField7">
+                    <Component class="javax.swing.JTextField" name="modTitle">
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel16">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Autor:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField8">
+                    <Component class="javax.swing.JTextField" name="modAutor">
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel17">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Precio:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField2">
+                    <Component class="javax.swing.JFormattedTextField" name="modPrecio">
                       <Properties>
                         <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
                           <Format subtype="0" type="0"/>
                         </Property>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JButton" name="jButton3">
+                    <Component class="javax.swing.JButton" name="btnEditar">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Editar Libro"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnEditarMouseClicked"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>

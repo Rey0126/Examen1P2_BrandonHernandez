@@ -67,18 +67,18 @@ public class Administrador extends javax.swing.JFrame {
         printLibro = new javax.swing.JTextPane();
         editar = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
-        jComboBox5 = new javax.swing.JComboBox<>();
+        cbTipos = new javax.swing.JComboBox<>();
         jLabel14 = new javax.swing.JLabel();
-        jComboBox6 = new javax.swing.JComboBox<>();
+        cbLibros = new javax.swing.JComboBox<>();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextPane2 = new javax.swing.JTextPane();
+        printEditLibro = new javax.swing.JTextPane();
         jLabel15 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        modTitle = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        modAutor = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
-        jFormattedTextField2 = new javax.swing.JFormattedTextField();
-        jButton3 = new javax.swing.JButton();
+        modPrecio = new javax.swing.JFormattedTextField();
+        btnEditar = new javax.swing.JButton();
         eliminar = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         jComboBox7 = new javax.swing.JComboBox<>();
@@ -320,8 +320,8 @@ public class Administrador extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(publicarLayout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(precio))
                     .addGroup(publicarLayout.createSequentialGroup()
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -396,11 +396,16 @@ public class Administrador extends javax.swing.JFrame {
 
         jLabel13.setText("Tipo: ");
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Libros de Texto", "Libros de Referencia", "Libros de Ficcion", "Libros de No Ficcion" }));
+        cbTipos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Libros de Texto", "Libros de Referencia", "Libros de Ficcion", "Libros de No Ficcion" }));
+        cbTipos.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbTiposItemStateChanged(evt);
+            }
+        });
 
         jLabel14.setText("Libro");
 
-        jScrollPane2.setViewportView(jTextPane2);
+        jScrollPane2.setViewportView(printEditLibro);
 
         jLabel15.setText("Titulo:");
 
@@ -408,9 +413,14 @@ public class Administrador extends javax.swing.JFrame {
 
         jLabel17.setText("Precio:");
 
-        jFormattedTextField2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
+        modPrecio.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
 
-        jButton3.setText("Editar Libro");
+        btnEditar.setText("Editar Libro");
+        btnEditar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnEditarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout editarLayout = new javax.swing.GroupLayout(editar);
         editar.setLayout(editarLayout);
@@ -423,11 +433,11 @@ public class Administrador extends javax.swing.JFrame {
                     .addGroup(editarLayout.createSequentialGroup()
                         .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jComboBox6, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(cbLibros, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(editarLayout.createSequentialGroup()
                         .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jComboBox5, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(cbTipos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(editarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(editarLayout.createSequentialGroup()
                         .addGap(116, 116, 116)
@@ -435,19 +445,19 @@ public class Administrador extends javax.swing.JFrame {
                             .addGroup(editarLayout.createSequentialGroup()
                                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jFormattedTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE))
+                                .addComponent(modPrecio, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE))
                             .addGroup(editarLayout.createSequentialGroup()
                                 .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField7))
+                                .addComponent(modTitle))
                             .addGroup(editarLayout.createSequentialGroup()
                                 .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField8)))
+                                .addComponent(modAutor)))
                         .addGap(117, 123, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, editarLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton3)
+                        .addComponent(btnEditar)
                         .addGap(37, 37, 37))))
         );
         editarLayout.setVerticalGroup(
@@ -456,27 +466,27 @@ public class Administrador extends javax.swing.JFrame {
                 .addGap(39, 39, 39)
                 .addGroup(editarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbTipos, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(editarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbLibros, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addGroup(editarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(editarLayout.createSequentialGroup()
                         .addGroup(editarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(modTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(editarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(modAutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(editarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(modPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(222, 222, 222)
-                        .addComponent(jButton3))
+                        .addComponent(btnEditar))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(33, Short.MAX_VALUE))
         );
@@ -930,7 +940,7 @@ public class Administrador extends javax.swing.JFrame {
     private void cbListarItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbListarItemStateChanged
         if (cbListar.getSelectedItem().equals("Todos")) {
             for (Libro l : libros) {
-                printLibro.setText(l.toString());
+                printLibro.setText(libros.get(libros.indexOf(l)).toString());
             }
         } else if (cbListar.getSelectedItem().equals("Libros de Texto")) {
             for (Libro l : libros) {
@@ -959,6 +969,105 @@ public class Administrador extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_cbListarItemStateChanged
+
+    private void cbTiposItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbTiposItemStateChanged
+        if (cbTipos.getSelectedItem().equals("Libros de Texto")) {
+            for (Libro l : libros) {
+                if (l instanceof LibroTexto) {
+                    cbLibros.addItem(l.getTitle());
+                    printEditLibro.setText(l.toString());
+                }
+            }
+        } else if (cbTipos.getSelectedItem().equals("Libros de Referencia")) {
+            for (Libro l : libros) {
+                if (l instanceof LibroReferencia) {
+                    cbLibros.addItem(l.getTitle());
+                }
+            }
+        } else if (cbTipos.getSelectedItem().equals("Libros de Ficcion")) {
+            for (Libro l : libros) {
+                if (l instanceof LibroFiccion) {
+                    cbLibros.addItem(l.getTitle());
+                }
+            }
+        } else if (cbTipos.getSelectedItem().equals("Libros de No Ficcion")) {
+            for (Libro l : libros) {
+                if (l instanceof LibroNoFiccion) {
+                    cbLibros.addItem(l.getTitle());
+                }
+            }
+        }
+
+        if (cbTipos.getSelectedItem().equals("Libros de Texto")) {
+            for (Libro l : libros) {
+                if (l instanceof LibroTexto) {
+                    if (cbLibros.getSelectedItem().equals(l.getTitle())) {
+                        printEditLibro.setText(l.toString());
+                    }
+
+                }
+            }
+        } else if (cbTipos.getSelectedItem().equals("Libros de Referencia")) {
+            for (Libro l : libros) {
+                if (l instanceof LibroReferencia) {
+                    if (cbLibros.getSelectedItem().equals(l.getTitle())) {
+                        printEditLibro.setText(l.toString());
+                    }
+                }
+            }
+        } else if (cbTipos.getSelectedItem().equals("Libros de Ficcion")) {
+            for (Libro l : libros) {
+                if (l instanceof LibroFiccion) {
+                    if (cbLibros.getSelectedItem().equals(l.getTitle())) {
+                        printEditLibro.setText(l.toString());
+                    }
+                }
+            }
+        } else if (cbTipos.getSelectedItem().equals("Libros de No Ficcion")) {
+            for (Libro l : libros) {
+                if (l instanceof LibroNoFiccion) {
+                    if (cbLibros.getSelectedItem().equals(l.getTitle())) {
+                        printEditLibro.setText(l.toString());
+                    }
+                }
+            }
+        }
+
+    }//GEN-LAST:event_cbTiposItemStateChanged
+
+    private void btnEditarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEditarMouseClicked
+        for (Libro l : libros) {
+            if (l instanceof LibroTexto) {
+                if (cbLibros.getSelectedItem().equals(l.getTitle())) {
+                    l.setTitle(modTitle.getText());
+                    l.setAutor(modAutor.getText());
+                    l.setPrecio(Double.parseDouble(modPrecio.getText()));
+                    JOptionPane.showMessageDialog(this, "Libro editado");
+                }
+                if (l instanceof LibroReferencia) {
+                    l.setTitle(modTitle.getText());
+                    l.setAutor(modAutor.getText());
+                    l.setPrecio(Double.parseDouble(modPrecio.getText()));
+                    JOptionPane.showMessageDialog(this, "Libro editado");
+                }
+                
+                if (l instanceof LibroFiccion){
+                    l.setTitle(modTitle.getText());
+                    l.setAutor(modAutor.getText());
+                    l.setPrecio(Double.parseDouble(modPrecio.getText()));
+                    JOptionPane.showMessageDialog(this, "Libro editado");
+                }
+                
+                if (l instanceof LibroNoFiccion){
+                    l.setTitle(modTitle.getText());
+                    l.setAutor(modAutor.getText());
+                    l.setPrecio(Double.parseDouble(modPrecio.getText()));
+                    JOptionPane.showMessageDialog(this, "Libro editado");
+                }
+
+            }
+        }
+    }//GEN-LAST:event_btnEditarMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -1001,15 +1110,18 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JTextField autor;
     private javax.swing.JPanel background;
     private javax.swing.JButton btnAdmin;
+    private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnPublicar;
     private javax.swing.JButton btnPublicar1;
     private javax.swing.JButton btnPublicar2;
     private javax.swing.JButton btnPublicar3;
     private javax.swing.JButton btnUser;
     private javax.swing.JComboBox<String> cbFiccion;
+    private javax.swing.JComboBox<String> cbLibros;
     private javax.swing.JComboBox<String> cbListar;
     private javax.swing.JComboBox<String> cbNoFiccion;
     private javax.swing.JComboBox<String> cbReferencia;
+    private javax.swing.JComboBox<String> cbTipos;
     private javax.swing.JPanel cerrarSesion;
     private javax.swing.JPanel comprar;
     private javax.swing.JTextField curso;
@@ -1022,19 +1134,15 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JTabbedPane interfazUser;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JComboBox<String> jComboBox10;
     private javax.swing.JComboBox<String> jComboBox11;
     private javax.swing.JComboBox<String> jComboBox12;
-    private javax.swing.JComboBox<String> jComboBox5;
-    private javax.swing.JComboBox<String> jComboBox6;
     private javax.swing.JComboBox<String> jComboBox7;
     private javax.swing.JComboBox<String> jComboBox8;
     private javax.swing.JComboBox<String> jComboBox9;
-    private javax.swing.JFormattedTextField jFormattedTextField2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1070,17 +1178,18 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextPane jTextPane2;
     private javax.swing.JTextPane jTextPane3;
     private javax.swing.JTextPane jTextPane4;
     private javax.swing.JTextPane jTextPane5;
     private javax.swing.JTextPane jTextPane6;
     private javax.swing.JTextPane jTextPane7;
     private javax.swing.JPanel listar;
+    private javax.swing.JTextField modAutor;
+    private javax.swing.JFormattedTextField modPrecio;
+    private javax.swing.JTextField modTitle;
     private javax.swing.JPasswordField pass;
     private javax.swing.JFormattedTextField precio;
+    private javax.swing.JTextPane printEditLibro;
     private javax.swing.JTextPane printLibro;
     private javax.swing.JPanel publicar;
     private javax.swing.JPanel salir;
