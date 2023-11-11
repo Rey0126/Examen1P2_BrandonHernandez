@@ -4,6 +4,7 @@
  */
 package examen1p2_brandonhernandez;
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,6 +14,7 @@ import javax.swing.JOptionPane;
 public class Administrador extends javax.swing.JFrame {
 
     int monedas;
+    ArrayList<Libro> libros = new ArrayList();
 
     public Administrador() {
         initComponents();
@@ -62,7 +64,7 @@ public class Administrador extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         cbListar = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
+        printLibro = new javax.swing.JTextPane();
         editar = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jComboBox5 = new javax.swing.JComboBox<>();
@@ -354,9 +356,14 @@ public class Administrador extends javax.swing.JFrame {
 
         jLabel12.setText("Tipo: ");
 
-        cbListar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Libro 1", "Libro 2", "Item 3", "Item 4" }));
+        cbListar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos", "Libros de Texto", "Libros de Referencia", "Libros de Ficcion", "Libros de No Ficcion" }));
+        cbListar.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbListarItemStateChanged(evt);
+            }
+        });
 
-        jScrollPane1.setViewportView(jTextPane1);
+        jScrollPane1.setViewportView(printLibro);
 
         javax.swing.GroupLayout listarLayout = new javax.swing.GroupLayout(listar);
         listar.setLayout(listarLayout);
@@ -389,11 +396,9 @@ public class Administrador extends javax.swing.JFrame {
 
         jLabel13.setText("Tipo: ");
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Libro 1", "Libro 2", "Item 3", "Item 4" }));
+        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Libros de Texto", "Libros de Referencia", "Libros de Ficcion", "Libros de No Ficcion" }));
 
         jLabel14.setText("Libro");
-
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Libro 1", "Libro 2", "Item 3", "Item 4" }));
 
         jScrollPane2.setViewportView(jTextPane2);
 
@@ -480,11 +485,7 @@ public class Administrador extends javax.swing.JFrame {
 
         jLabel18.setText("Tipo: ");
 
-        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Libro 1", "Libro 2", "Item 3", "Item 4" }));
-
         jLabel19.setText("Libro");
-
-        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Libro 1", "Libro 2", "Item 3", "Item 4" }));
 
         jScrollPane3.setViewportView(jTextPane3);
 
@@ -865,16 +866,16 @@ public class Administrador extends javax.swing.JFrame {
 
     private void btnAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdminMouseClicked
 
-        if (user.getText().equals("lib123") && pass.getText().equals("123lib")) {
-            this.setVisible(false);
-            vAdmin.pack();
-            vAdmin.setVisible(true);
-            vAdmin.setLocationRelativeTo(null);
-        } else {
-            JOptionPane.showMessageDialog(this, "Credenciales Incorrectas");
-            user.setText("");
-            pass.setText("");
-        }
+        //if (user.getText().equals("lib123") && pass.getText().equals("123lib")) {
+        this.setVisible(false);
+        vAdmin.pack();
+        vAdmin.setVisible(true);
+        vAdmin.setLocationRelativeTo(null);
+        // } else {
+//            JOptionPane.showMessageDialog(this, "Credenciales Incorrectas");
+//            user.setText("");
+//            pass.setText("");
+        //}
 
     }//GEN-LAST:event_btnAdminMouseClicked
 
@@ -901,26 +902,64 @@ public class Administrador extends javax.swing.JFrame {
 
     private void btnPublicarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPublicarMouseClicked
         Libro L = new LibroTexto(titulo.getText(), autor.getText(), Double.parseDouble(precio.getText()), curso.getText(), facu.getText());
-        cbListar.addItem(L.toString());
+        libros.add(L);
+        JOptionPane.showMessageDialog(this, "Libro Publicado");
     }//GEN-LAST:event_btnPublicarMouseClicked
 
     private void btnPublicar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPublicar1MouseClicked
         Libro L = new LibroReferencia(cbReferencia.getSelectedItem().toString(), titulo.getText(), autor.getText(), Double.parseDouble(precio.getText()));
-        cbListar.addItem(L.toString());
+
+        libros.add(L);
+        JOptionPane.showMessageDialog(this, "Libro Publicado");
     }//GEN-LAST:event_btnPublicar1MouseClicked
 
     private void btnPublicar2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPublicar2MouseClicked
         Libro L = new LibroFiccion(cbFiccion.getSelectedItem().toString(), titulo.getText(), autor.getText(), Double.parseDouble(precio.getText()));
-        cbListar.addItem(L.toString());
+
+        libros.add(L);
+        JOptionPane.showMessageDialog(this, "Libro Publicado");
     }//GEN-LAST:event_btnPublicar2MouseClicked
 
     private void btnPublicar3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPublicar3MouseClicked
         Libro L = new LibroNoFiccion(cbFiccion.getSelectedItem().toString(), titulo.getText(), autor.getText(), Double.parseDouble(precio.getText()));
+
+        libros.add(L);
+        JOptionPane.showMessageDialog(this, "Libro Publicado");
     }//GEN-LAST:event_btnPublicar3MouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
+    private void cbListarItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbListarItemStateChanged
+        if (cbListar.getSelectedItem().equals("Todos")) {
+            for (Libro l : libros) {
+                printLibro.setText(l.toString());
+            }
+        } else if (cbListar.getSelectedItem().equals("Libros de Texto")) {
+            for (Libro l : libros) {
+                if (l instanceof LibroTexto) {
+                    printLibro.setText(l.toString());
+                }
+            }
+        } else if (cbListar.getSelectedItem().equals("Libros de Referencia")) {
+            for (Libro l : libros) {
+                if (l instanceof LibroReferencia) {
+                    printLibro.setText(l.toString());
+                }
+            }
+        } else if (cbListar.getSelectedItem().equals("Libros de Ficcion")) {
+            for (Libro l : libros) {
+                if (l instanceof LibroFiccion) {
+                    printLibro.setText(l.toString());
+                }
+            }
+        } else if (cbListar.getSelectedItem().equals("Libros de No Ficcion")) {
+            for (Libro l : libros) {
+                if (l instanceof LibroNoFiccion) {
+                    printLibro.setText(l.toString());
+                }
+            }
+        }
+
+    }//GEN-LAST:event_cbListarItemStateChanged
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1033,7 +1072,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextPane jTextPane1;
     private javax.swing.JTextPane jTextPane2;
     private javax.swing.JTextPane jTextPane3;
     private javax.swing.JTextPane jTextPane4;
@@ -1043,6 +1081,7 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JPanel listar;
     private javax.swing.JPasswordField pass;
     private javax.swing.JFormattedTextField precio;
+    private javax.swing.JTextPane printLibro;
     private javax.swing.JPanel publicar;
     private javax.swing.JPanel salir;
     private javax.swing.JTextField titulo;
